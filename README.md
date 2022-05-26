@@ -38,7 +38,7 @@ The following relay outputs are supported:
 - Motor on/off control.
 - Left turn signal control.
 - Right turn signal control.
-- Headlights/bakclights control.
+- Headlights/backlights control.
 
 The following direct LED outputs are supported:
 - Power on indicator.
