@@ -74,6 +74,8 @@ void turn_signal_c::run_blinking_priv()
 
 void turn_signal_c::set_power_on_impl()
 {
+        m_control_output.set(0);
+        m_indicator_output.set(1);
 }
 
 void turn_signal_c::set_power_off_impl()

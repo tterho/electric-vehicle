@@ -9,7 +9,7 @@ motor_c::motor_c(input_c &throttle_input, input_c &direction_input,
                  output_c &throttle_output, output_c &direction1_output,
                  output_c &direction2_output, output_c &fw_indicator_output,
                  output_c &bw_indicator_output)
-:       m_state(motor_state_e::OFF), m_throttle_input(throttle_input),
+:       m_state(motor_state_e::RUNNING), m_throttle_input(throttle_input),
         m_direction_input(direction_input), m_throttle_output(throttle_output),
         m_direction1_output(direction1_output),
         m_direction2_output(direction2_output),
@@ -32,6 +32,7 @@ void motor_c::set_direction_priv()
 
 void motor_c::set_power_on_impl()
 {
+        m_state = motor_state_e::RUNNING;
         set_direction_priv();
 }
 
