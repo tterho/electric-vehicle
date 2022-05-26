@@ -21,7 +21,7 @@ bool input_c::get()
 {
         bool current_state;
 
-        current_state = digitalRead(m_number);
+        current_state = get_priv();
 
         // Check if the current state has changed, and apply the stabilization
         // delay when needed.
@@ -36,7 +36,12 @@ bool input_c::get()
 bool input_c::has_changed()
 {
         // Check is the digital input state changed from the previous state.
-        return (m_previous_state != digitalRead(m_number));
+        return (m_previous_state != get_priv());
+}
+
+bool input_c::get_priv()
+{
+        return !digitalRead(m_number);
 }
 
 /* EOF */

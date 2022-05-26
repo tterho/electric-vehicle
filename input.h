@@ -38,6 +38,12 @@ public:
         bool has_changed();
 
 private:
+        /**
+         * @brief Get input state.
+         * @return Input state.
+         */
+        bool get_priv();
+
         /// Input number.
         uint8_t m_number;
         /// Previous state.
