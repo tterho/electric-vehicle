@@ -32,21 +32,6 @@ void turn_signal_c::set_emergency_off()
         m_blink_state = blink_state_e::SET_OFF;
 }
 
-void turn_signal_c::run()
-{
-        bool is_on;
-
-        is_on = is_on_priv();
-
-        if (is_on) {
-                run_blinking_priv();
-        } else {
-                m_blink_state = blink_state_e::SET_OFF;
-                m_control_output.set(0);
-                m_indicator_output.set(1);
-        }
-}
-
 bool turn_signal_c::is_on_priv()
 {
         if (m_emergency_on) {
@@ -84,6 +69,32 @@ void turn_signal_c::run_blinking_priv()
                 m_indicator_output.set(1);
                 m_blink_state = blink_state_e::OFF;
                 break;
+        }
+}
+
+void turn_signal_c::set_power_on_impl()
+{
+}
+
+void turn_signal_c::set_power_off_impl()
+{
+        m_blink_state = blink_state_e::SET_OFF;
+        m_control_output.set(0);
+        m_indicator_output.set(1);
+}
+
+void turn_signal_c::run_impl()
+{
+        bool is_on;
+
+        is_on = is_on_priv();
+
+        if (is_on) {
+                run_blinking_priv();
+        } else {
+                m_blink_state = blink_state_e::SET_OFF;
+                m_control_output.set(0);
+                m_indicator_output.set(1);
         }
 }
 

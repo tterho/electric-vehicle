@@ -14,9 +14,22 @@ lights_c::lights_c(input_c &switch_input, output_c &control_output,
 {
 }
 
-void lights_c::run()
+void lights_c::set_power_on_impl()
 {
-        bool state = m_switch_input.get();
+        run_impl();
+}
+
+void lights_c::set_power_off_impl()
+{
+        m_control_output.set(false);
+        m_indicator_output.set(true);
+}
+
+void lights_c::run_impl()
+{
+        bool state;
+
+        state = m_switch_input.get();
 
         m_control_output.set(state);
         m_indicator_output.set(!state);

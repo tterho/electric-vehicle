@@ -31,6 +31,12 @@ bool toggle_c::has_changed()
         return (m_previous_toggle_state != get_priv());
 }
 
+void toggle_c::reset()
+{
+        m_toggle_state = false;
+        m_previous_toggle_state = false;
+}
+
 bool toggle_c::get_priv()
 {
         bool switch_state;

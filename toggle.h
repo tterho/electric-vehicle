@@ -37,6 +37,11 @@ public:
          */
         bool has_changed();
 
+        /**
+         * @brief Reset the toggle state.
+         */
+        void reset();
+
 private:
         /**
          * @brief Get toggle state.

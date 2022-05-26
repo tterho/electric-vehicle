@@ -5,13 +5,14 @@
 
 #pragma once
 
+#include "powerable.h"
 #include "input.h"
 #include "output.h"
 
 /**
  * @brief Motor direction and throttle control class.
  */
-class motor_c {
+class motor_c : public powerable_c {
 public:
         /**
          * @brief Motor running states.
@@ -46,16 +47,26 @@ public:
                 output_c &direction2_output, output_c &fw_indicator_output,
                 output_c &bw_indicator_output);
 
-        /**
-         * @brief Run motor control.
-         */
-        void run();
-
 private:
         /**
          * @brief Update and set the direction control.
          */
         void set_direction_priv();
+
+        /**
+         * Set power on (implementation).
+         */
+        void set_power_on_impl() override;
+
+        /**
+         * Set power off (implementation).
+         */
+        void set_power_off_impl() override;
+
+        /**
+         * @brief Run motor control (implementation).
+         */
+        void run_impl() override;
 
         /// Motor state.
         motor_state_e m_state;

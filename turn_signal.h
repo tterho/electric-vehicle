@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include "powerable.h"
 #include "input.h"
 #include "output.h"
 #include "software_timer.h"
@@ -12,7 +13,7 @@
 /**
  * @brief Turn signal control class.
  */
-class turn_signal_c {
+class turn_signal_c : public powerable_c {
 public:
         /**
          * @brief Turn signal blinking state machine states.
@@ -45,11 +46,6 @@ public:
          */
         void set_emergency_off();
 
-        /**
-         * @brief Run turn signal control.
-         */
-        void run();
-
 private:
         /**
          * @brief Get turn signal state.
@@ -62,6 +58,21 @@ private:
          * @brief Run blinking state machine.
          */
         void run_blinking_priv();
+
+        /**
+         * Set power on (implementation).
+         */
+        void set_power_on_impl() override;
+
+        /**
+         * Set power off (implementation).
+         */
+        void set_power_off_impl() override;
+
+        /**
+         * @brief Run turn signal control (implementation)
+         */
+        void run_impl() override;
 
         /// Switch input.
         input_c &m_switch_input;

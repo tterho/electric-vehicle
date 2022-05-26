@@ -18,7 +18,33 @@ motor_c::motor_c(input_c &throttle_input, input_c &direction_input,
 {
 }
 
-void motor_c::run()
+void motor_c::set_direction_priv()
+{
+        bool direction;
+
+        direction = m_direction_input.get();
+
+        m_fw_indicator_output.set(!direction);
+        m_bw_indicator_output.set(direction);
+        m_direction1_output.set(!direction);
+        m_direction2_output.set(!direction);
+}
+
+void motor_c::set_power_on_impl()
+{
+        set_direction_priv();
+}
+
+void motor_c::set_power_off_impl()
+{
+        m_throttle_output.set(false);
+        m_fw_indicator_output.set(true);
+        m_bw_indicator_output.set(true);
+        m_direction1_output.set(false);
+        m_direction2_output.set(false);
+}
+
+void motor_c::run_impl()
 {
         switch(m_state) {
         case motor_state_e::OFF :
@@ -53,18 +79,6 @@ void motor_c::run()
                 m_state = motor_state_e::OFF;
                 break;
         }
-}
-
-void motor_c::set_direction_priv()
-{
-        bool direction;
-
-        direction = m_direction_input.get();
-
-        m_fw_indicator_output.set(!direction);
-        m_bw_indicator_output.set(direction);
-        m_direction1_output.set(!direction);
-        m_direction2_output.set(!direction);
 }
 
 /* EOF */

@@ -15,7 +15,18 @@ emergency_signal_c::emergency_signal_c(toggle_c &toggle_input,
 {
 }
 
-void emergency_signal_c::run()
+void emergency_signal_c::set_power_on_impl()
+{
+}
+
+void emergency_signal_c::set_power_off_impl()
+{
+        m_toggle.reset();
+        m_turn_signal_l.set_emergency_off();
+        m_turn_signal_r.set_emergency_off();
+}
+
+void emergency_signal_c::run_impl()
 {
         bool emergency_signal_on;
 

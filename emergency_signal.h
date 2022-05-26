@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include "powerable.h"
 #include "toggle.h"
 #include "turn_signal.h"
 
@@ -14,7 +15,7 @@
  * This class controls two turn signals (left and right) simultaneously for
  * signaling an emergency state.
  */
-class emergency_signal_c {
+class emergency_signal_c : public powerable_c {
 public:
         /**
          * @brief Constructor of the class.
@@ -23,12 +24,22 @@ public:
         emergency_signal_c(toggle_c &toggle_input, turn_signal_c &turn_signal_l,
                            turn_signal_c &turn_signal_r);
 
-        /**
-         * @brief Run the emergency signal control.
-         */
-        void run();
-
 private:
+        /**
+         * Set power on (implementation).
+         */
+        void set_power_on_impl() override;
+
+        /**
+         * Set power off (implementation).
+         */
+        void set_power_off_impl() override;
+
+        /**
+         * @brief Run the emergency signal control (implementation).
+         */
+        void run_impl() override;
+
         /// Toggle switch input.
         toggle_c &m_toggle;
         /// Left turn signal.
