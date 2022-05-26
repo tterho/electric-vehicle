@@ -10,7 +10,7 @@
 #include "software_timer.h"
 
 /**
- * \brief Turn signal control class.
+ * @brief Turn signal control class.
  */
 class turn_signal_c {
 public:
@@ -25,41 +25,41 @@ public:
         }; // enum class blink_state_e;
 
         /**
-         * \brief Constructor of the class.
-         * \param[in] switch_input A reference to a switch input.
-         * \param[in] control_output A reference to a control output.
-         * \param[in] indicator_output A reference to a control output.
+         * @brief Constructor of the class.
+         * @param[in] switch_input A reference to a switch input.
+         * @param[in] control_output A reference to a control output.
+         * @param[in] indicator_output A reference to a control output.
          */
         turn_signal_c(input_c &switch_input, output_c &control_output,
                       output_c &indicator_output);
 
         /**
-         * \brief Set emergency state on.
+         * @brief Set emergency state on.
          * This method overrides the input switch control.
          */
         void set_emergency_on();
 
         /**
-         * \brief Set emergency state off.
+         * @brief Set emergency state off.
          * This method restores the input switch control.
          */
         void set_emergency_off();
 
         /**
-         * \brief Run turn signal control.
+         * @brief Run turn signal control.
          */
         void run();
 
 private:
         /**
-         * \brief Get turn signal state.
-         * \retval true Turn signal is on.
-         * \retval false Turn signal is off.
+         * @brief Get turn signal state.
+         * @retval true Turn signal is on.
+         * @retval false Turn signal is off.
          */
         bool is_on_priv();
 
         /**
-         * \brief Run blinking state machine.
+         * @brief Run blinking state machine.
          */
         void run_blinking_priv();
 
