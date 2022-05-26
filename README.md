@@ -61,7 +61,7 @@ Bill of materials for the tractor installation:
 |6|220R resistor|Current limiting resistors for indicator LEDs|
 |10m|1,0mm2 wire|Motor wiring|
 |20m|0,5mm2 wire|Lights wiring|
-|4|Abiko terminals|Battery wiring|
+|20|Abiko terminals|Battery and lamp wiring|
 |0.1m|Shrink tube|Wire joint protection|
 |2|2.1mm/5mm jack|Battery charging connectors|
 
