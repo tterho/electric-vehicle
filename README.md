@@ -17,9 +17,9 @@ Part list of the control system:
 
 ## Features
 
-### Input switches
+### Inputs
 
-Input switches are used to control the functions of the electric system. All switches are read by the software individually, and the can be connected in the software to different functions freely.
+Input switches are used to control the functions of the electric system. All switches are read by the software individually, and they can be connected in the software to different functions freely.
 
 The following switches are supported:
 - Power on/off lever switch.
