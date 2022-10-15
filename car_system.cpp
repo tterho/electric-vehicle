@@ -7,13 +7,13 @@
 #include "Arduino.h"
 
 /// Relay shield relay 1 output pin.
-#define PIN_SHIELD_RELAY_1 4
+#define PIN_SHIELD_RELAY_1 7
 /// Relay shield relay 2 output pin.
-#define PIN_SHIELD_RELAY_2 7
+#define PIN_SHIELD_RELAY_2 6
 /// Relay shield relay 3 output pin.
-#define PIN_SHIELD_RELAY_3 8
+#define PIN_SHIELD_RELAY_3 5
 /// Relay shield relay 4 output pin.
-#define PIN_SHIELD_RELAY_4 12
+#define PIN_SHIELD_RELAY_4 4
 
 /// External relay 1 output pin.
 #define PIN_EXTERNAL_RELAY_1 2
@@ -51,16 +51,16 @@
 /// Motor throttle control output pin.
 #define PIN_MOTOR_CTRL PIN_EXTERNAL_RELAY_1
 /// Motor throttle switch input pin.
-#define PIN_MOTOR_THROTTLE 9
+#define PIN_MOTOR_THROTTLE 12
 
 /// Direction control 1 relay output pin.
 #define PIN_DIRECTION_CONTROL_1 PIN_SHIELD_RELAY_1
 /// Direction control 2 relay output pin.
 #define PIN_DIRECTION_CONTROL_2 PIN_SHIELD_RELAY_2
 /// Direction forward indicator output pin.
-#define PIN_DIRECTION_INDICATOR_FW 5
+#define PIN_DIRECTION_INDICATOR_FW 8
 /// Direction backward indicator output pin.
-#define PIN_DIRECTION_INDICATOR_BW 6
+#define PIN_DIRECTION_INDICATOR_BW 9
 /// Direction selector switch input pin.
 #define PIN_DIRECTION_SELECTOR_SWITCH 15
 
