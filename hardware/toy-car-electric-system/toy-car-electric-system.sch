@@ -148,7 +148,7 @@ Wire Wire Line
 Wire Wire Line
 	1400 4650 1400 4350
 Wire Wire Line
-	10250 5750 10250 5850
+	10250 5750 10250 5800
 $Comp
 L power:GND #PWR0110
 U 1 1 628FF8A4
@@ -163,16 +163,14 @@ $EndComp
 $Comp
 L power:+12V #PWR0107
 U 1 1 628FF8E6
-P 10250 5250
-F 0 "#PWR0107" H 10250 5100 50  0001 C CNN
-F 1 "+12V" H 10265 5423 50  0000 C CNN
-F 2 "" H 10250 5250 50  0001 C CNN
-F 3 "" H 10250 5250 50  0001 C CNN
-	1    10250 5250
+P 9300 5050
+F 0 "#PWR0107" H 9300 4900 50  0001 C CNN
+F 1 "+12V" H 9315 5223 50  0000 C CNN
+F 2 "" H 9300 5050 50  0001 C CNN
+F 3 "" H 9300 5050 50  0001 C CNN
+	1    9300 5050
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	10250 5250 10250 5350
 $Comp
 L dk_Power-Relays-Over-2-Amps:G5LE-14_DC5 RLY104
 U 1 1 6290052F
@@ -1040,4 +1038,77 @@ Wire Wire Line
 	2950 1550 3950 1550
 Wire Wire Line
 	2900 3600 5100 3600
+$Comp
+L Switch:SW_SPDT SW?
+U 1 1 6350C779
+P 9700 5300
+F 0 "SW?" H 9700 5500 50  0000 C CNN
+F 1 "SW_SPDT" H 9700 5494 50  0001 C CNN
+F 2 "" H 9700 5300 50  0001 C CNN
+F 3 "" H 9700 5300 50  0001 C CNN
+	1    9700 5300
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector:Jack-DC J?
+U 1 1 6350CA62
+P 8800 5500
+F 0 "J?" H 8855 5825 50  0000 C CNN
+F 1 "Jack-DC" H 8855 5734 50  0000 C CNN
+F 2 "" H 8850 5460 50  0001 C CNN
+F 3 "~" H 8850 5460 50  0001 C CNN
+	1    8800 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Jack-DC J?
+U 1 1 6350CB20
+P 800 4900
+F 0 "J?" H 855 5225 50  0000 C CNN
+F 1 "Jack-DC" H 855 5134 50  0000 C CNN
+F 2 "" H 850 4860 50  0001 C CNN
+F 3 "~" H 850 4860 50  0001 C CNN
+	1    800  4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10250 5300 9900 5300
+Wire Wire Line
+	10250 5300 10250 5350
+Wire Wire Line
+	9500 5400 9300 5400
+Wire Wire Line
+	9300 5400 9300 5050
+Wire Wire Line
+	9100 5400 9300 5400
+Connection ~ 9300 5400
+Wire Wire Line
+	9100 5600 9300 5600
+Wire Wire Line
+	9300 5600 9300 5800
+Wire Wire Line
+	9300 5800 10250 5800
+Connection ~ 10250 5800
+Wire Wire Line
+	10250 5800 10250 5850
+Text Notes 9550 5600 0    50   ~ 0
+Main switch
+Wire Wire Line
+	1100 4800 1200 4800
+Wire Wire Line
+	1200 4800 1200 4500
+Wire Wire Line
+	1200 4500 1600 4500
+Connection ~ 1600 4500
+Wire Wire Line
+	1100 5000 1200 5000
+Wire Wire Line
+	1200 5000 1200 5300
+Wire Wire Line
+	1200 5300 1500 5300
+Connection ~ 1500 5300
+Text Notes 550  5350 0    50   ~ 0
+Motor battery\ncharging \nconnector
+Text Notes 8600 6050 0    50   ~ 0
+Electronics\nbattery\ncharging\nconnector
 $EndSCHEMATC

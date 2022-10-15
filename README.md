@@ -31,7 +31,7 @@ Bill of materials for the control system:
 |Count|Manufacturer|Product code|Product name|
 |---|---|---|---|
 |1|Arduino|ABX00021|Arduino Uno WiFi Rev2|
-|1|Arduino|A000110| Arduino 4 Relays Shield|
+|1|Seeeduino|103030009|Relay shield v3.0|
 |1|Seeeduino|103030000|Grove Base Shield v2.0 for Arduino|
 |2|Seeeduino|103020005|Grove Relay|
 |4|Seeeduino|103020007|Grove Screw Terminal|
@@ -41,11 +41,12 @@ Bill of materials for the tractor installation:
 |---|---|---|
 |1|Injusa toy tractor with 6V DC motor|Framework|
 |1|2-position (ON-ON) lever switch|Motor direction selection (forward/backward)|
+|1|2-position (ON-ON) lever switch|Main switch|
 |1|3-position (ON-OFF-ON) lever switch|Turn signal selection|
-|1|Rocker switch|Headlights / backlights on/off|
+|1|Rocker switch (ON-OFF)|Headlights / backlights on/off|
 |1|Key switch|Main power on/off|
 |1|Push button|Emergency signals on/off|
-|1|Microswitch|Motor throttle control|
+|1|Microswitch|Motor throttle control / pedal|
 |2|Clear glass lamp enclosure|Headlights|
 |2|12V white LED lamp|Headlights|
 |2|Red glass lamp enclosure|Backlights|
@@ -62,8 +63,8 @@ Bill of materials for the tractor installation:
 |10m|1,0mm2 wire|Motor wiring|
 |20m|0,5mm2 wire|Lights wiring|
 |20|Abiko terminals|Battery and lamp wiring|
-|0.1m|Shrink tube|Wire joint protection|
-|2|2.1mm/5mm jack|Battery charging connectors|
+|0.2m|Shrink tube|Wire joint protection|
+|2|2.5x5.5mm DC power jack|Battery charging connectors|
 
 ## Software features
 
